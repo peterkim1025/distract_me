@@ -4,11 +4,7 @@ const filterList = document.getElementById("filterList");
 const clearFavoritesButton = document.getElementById("clearFavoritesBtn");
 let currentJokeType = "Any";
 
-const updateJokeType = (type) => {
-    currentJokeType = type;
-    getJoke();
-};
-
+//getting jokes
 const getJoke = () => {
     jokeContainer.classList.remove("fade");
     const apiUrl = `https://v2.jokeapi.dev/joke/${currentJokeType}?blacklistFlags=nsfw,religious,political,racist,sexist,explicit&type=single`;
@@ -18,8 +14,6 @@ const getJoke = () => {
         .then((jokeData) => {
             item = jokeData;
             jokeContainer.textContent = `${item.joke}`;
-            jokeContainer.classList.add("fade");
-            addToFavoritesButton.style.display = "block"; 
             addToFavoritesButton.textContent = "Add to Favorites";
             addToFavoritesButton.addEventListener("click", () => {
                 addToFavorites(item);
@@ -29,6 +23,15 @@ const getJoke = () => {
         });
 };
 
+getJoke();
+btn.addEventListener("click",getJoke);
+
+//update jokes by types
+const updateJokeType = (type) => {
+    currentJokeType = type;
+    getJoke();
+};
+
 filterList.addEventListener("click", (event) => {
     if (event.target.tagName === "BUTTON") {
         const jokeType = event.target.getAttribute("data-type");
@@ -36,8 +39,7 @@ filterList.addEventListener("click", (event) => {
     }
 });
 
-btn.addEventListener("click",getJoke);
-
+//add to favorites
 function addToFavorites(joke) {
     let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
 
@@ -48,6 +50,16 @@ function addToFavorites(joke) {
     }
 }
 
+const addToFavoritesButton = document.getElementById("addToFavoritesBtn");
+addToFavoritesButton.style.display = "block"; 
+addToFavoritesButton.textContent = "Add to Favorites";
+
+addToFavoritesButton.addEventListener("click", () => {
+    addToFavorites(item);
+    displayFavorites(); 
+});
+
+//display favorites
 function displayFavorites() {
     const favoritesContainer = document.getElementById("favorites");
 
@@ -68,18 +80,9 @@ function displayFavorites() {
     }
 }
 
-getJoke();
-
-const addToFavoritesButton = document.getElementById("addToFavoritesBtn");
-addToFavoritesButton.style.display = "block"; 
-addToFavoritesButton.textContent = "Add to Favorites";
-addToFavoritesButton.addEventListener("click", () => {
-    addToFavorites(item);
-    displayFavorites(); 
-});
-
 displayFavorites();
 
+//clear button
 clearFavoritesButton.addEventListener("click", () => {
     clearFavorites();
     displayFavorites();
