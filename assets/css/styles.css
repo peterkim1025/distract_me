@@ -17,3 +17,6 @@ button {
     width: 90%;
     justify-content: center;
 }
+img {
+    size: 25vwh;
+}
