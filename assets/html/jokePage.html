@@ -10,9 +10,19 @@
 	<body>
 		<div class="container">
 			<h1>Random Joke Generator</h1>
-			<div id="joke" class="fade"></div>
+			<div class="sidebar">
+				<h3>Filter by Type:</h3>
+				<ul id="filterList">
+					<li><button data-type="Any">Any</button></li>
+					<li><button data-type="Misc">Miscellaneous</button></li>
+					<li><button data-type="Programming">Programming</button></li>
+					<li><button data-type="Pun">Pun</button></li>
+				</ul>
+			</div>
 			<button id="btn">Get Joke</button>
+			<div id="joke" class="fade"></div>
 		</div>
+		
 		<script src="../js/jokeApi.js"></script>
 	</body>
 </html>

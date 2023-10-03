@@ -1,15 +1,32 @@
 const jokeContainer = document.getElementById("joke");
 const btn = document.getElementById("btn");
-const url = "https://v2.jokeapi.dev/joke/Any?blacklistFlags=nsfw,religious,political,racist,sexist,explicit&type=single";
+const filterList = document.getElementById("filterList");
 
-let getJoke = () => {
+let currentJokeType = "Any"; // Initialize with "Any" type
+
+const updateJokeType = (type) => {
+    currentJokeType = type;
+    getJoke();
+};
+
+const getJoke = () => {
     jokeContainer.classList.remove("fade");
-    fetch(url)
-    .then(data => data.json())
-    .then(item =>{
-        jokeContainer.textContent = `${item.joke}`;
-        jokeContainer.classList.add("fade");
-    });
-}
+    const apiUrl = `https://v2.jokeapi.dev/joke/${currentJokeType}?blacklistFlags=nsfw,religious,political,racist,sexist,explicit&type=single`;
+
+    fetch(apiUrl)
+        .then((data) => data.json())
+        .then((item) => {
+            jokeContainer.textContent = `${item.joke}`;
+            jokeContainer.classList.add("fade");
+        });
+};
+
+// Add event listeners to filter buttons
+filterList.addEventListener("click", (event) => {
+    if (event.target.tagName === "BUTTON") {
+        const jokeType = event.target.getAttribute("data-type");
+        updateJokeType(jokeType);
+    }
+});
 btn.addEventListener("click",getJoke);
 getJoke();
