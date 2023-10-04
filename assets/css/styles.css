@@ -17,3 +17,29 @@ button {
     width: 90%;
     justify-content: center;
 }
+body{
+    background-color: antiquewhite;
+}
+#filterList {
+    display:flex;
+    padding: 10px;
+    }
+    
+    nav {
+        display:flex ;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .align{
+        text-align: center;
+    }
+    
+.header{
+    display: ;
+    
+justify-content: space-between;
+}
+.favorite{
+    display: flex;
+    align-items: center;
+}
