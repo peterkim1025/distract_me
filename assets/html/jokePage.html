@@ -5,12 +5,24 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 		<title>Joke texts</title>
+		<!-- Compiled and minified CSS -->
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
 		<link rel="stylesheet" href="../css/styles.css" />
+		
 	</head>
 	<body>
+		<header class="header">
+			
+		<nav class="teal lighten-2">
+		<h1>Distract Me</h1>	
+		<a href="favorites.html" class="btn red btn-floating pulse favorite"><i class="material-icons">favorite</i></a>
+		</nav>
+	</header>
 		<div class="container">
-			<h1>Random Joke Generator</h1>
-			<div class="sidebar">
+			<div class="card-panel blue lighten-3">
+			<h2>Random Joke Generator</h2>
+			<div class="sidebar ">
 				<h3>Filter by Type:</h3>
 				<ul id="filterList">
 					<li><button data-type="Any">Any</button></li>
@@ -27,8 +39,14 @@
 			<h2>Favorites:</h2>
 			<div id="favorites"></div>
 			<button id="clearFavoritesBtn">Clear Favorites</button>
+			<div class="align">
+			<button id="btn" >Get Joke</button>
+			<div  class="card-panel grey" id="joke" class="fade" ></div>
+			<div class="favBtn"><button class="btn red btn-floating pulse" ><i class="material-icons">favorite</i></button>
 		</div>
-		
+	</div>
+	</div>
+	
 		<script src="../js/jokeApi.js"></script>
 	</body>
 </html>
