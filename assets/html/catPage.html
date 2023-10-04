@@ -9,22 +9,28 @@
 			href="https://fonts.googleapis.com/icon?family=Material+Icons"
 			rel="stylesheet"
 		/>
-		<link rel="stylesheet" href="../css/styles.css" />
+		<link rel="stylesheet" href="../css/catpage.css" />
 	</head>
 	<body>
-		<header>Meow</header>
-		<div class="right col-12 col-md-9 p-3 text-light">
-			<h3>here kitty kitty</h3>
-			<label
-				>Want to see more kitties..
-				<input
-					type="string"
-					id="cat-number"
-					placeholder="Enter number of cats"
-				/>
-			</label>
-			<button type="submit" id="cat-Search-Btn">Meow</button>
+		<div class="right col-12 col-md-9 p-3">
+			<div class="multiCatFetch">
+				<label
+					>Want to see more than 1 cat?
+					<input
+						type="string"
+						id="cat-number"
+						placeholder="Enter number of cats"
+					/>
+				</label>
+				<button type="submit" id="cat-Search-Btn">Meowfest</button>
+			</div>
+			<select onchange="showBreedImage(value)" name="breed_selector" id="breed_selector"></select>
+			<button type="submit" id="rando-cat-btn">Fetch me a New Kitty</button>
 			<div id="catPhotoContainer"></div>
+		</div>
+		<div>
+			<div id="breed_json"></div>
+			<img id="breed_image"></img>
 		</div>
 		<script src="../js/catApi.js"></script>
 	</body>

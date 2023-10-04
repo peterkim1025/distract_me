@@ -5,65 +5,30 @@
     font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 }
 
-button {
-    background: var(--blue);
-    border: none;
-    color: var(--white);
-}
-
-.placeholder { 
-    display: flex;
-    flex-wrap: wrap;
-    width: 90%;
-    justify-content: center;
-}
-img {
-    width: 25vw;
-    height: 50vh;
-    border-radius: .5rem;
-}
-#catPhotoContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.card {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    flex-wrap: wrap;
-}
-
-.likeBtn {
-    border-radius: .3rem;
-    margin: .1rem;
-    width: max-content;
-}
-.likeBtn:hover {
-    background: var(--grey);
-}
 body{
     background-color: antiquewhite;
 }
+
 #filterList {
     display:flex;
     padding: 10px;
-    }
+}
     
-    nav {
-        display:flex ;
-        justify-content: space-between;
-        align-items: center;
-    }
-    .align{
-        text-align: center;
-    }
+nav {
+    display:flex ;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.align{
+    text-align: center;
+}
     
 .header{
-    display: ;
-    
-justify-content: space-between;
+    display: flex;
+    justify-content: space-between;
 }
+
 .favorite{
     display: flex;
     align-items: center;

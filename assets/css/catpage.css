@@ -1,14 +1,27 @@
 :root {
     --white: #fff;
-    --blue: #3d5170;
-    --grey: grey;
+    --blue: #096abe;
+    --teal: #77bbb5;
     font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+
+.multiCatFetch {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
 }
 
 button {
     background: var(--blue);
     border: none;
     color: var(--white);
+    border-radius: .3rem;
+}
+button:hover {
+    background: var(--teal);
 }
 
 .placeholder { 
@@ -16,4 +29,32 @@ button {
     flex-wrap: wrap;
     width: 90%;
     justify-content: center;
+}
+img {
+    width: 35%;
+    height: auto;
+    border-radius: .5rem;
+}
+
+#catPhotoContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.likeBtn {
+    border-radius: .3rem;
+    margin: .1rem;
+    width: max-content;
+}
+
+.likeBtn:hover {
+    background: var(--teal);
 }
