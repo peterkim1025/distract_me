@@ -20,9 +20,25 @@ button {
 img {
     width: 25vw;
     height: 50vh;
+    border-radius: .5rem;
 }
 #catPhotoContainer {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+.card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.likeBtn {
+    border-radius: .3rem;
+    margin: .1rem;
+    width: max-content;
+}
+.likeBtn:hover {
+    background: var(--grey);
 }

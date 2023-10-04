@@ -36,8 +36,6 @@ var buttonClickHandler = function (event) {
 function isFavorited(event) {
 	img = event.target.id;
 	catArray.push(img);
-	// rgx = /images\/(.*).[a-z]{3}/;
-	// img = img.match(rgx)[1];
 	localStorage.setItem('favoriteCats', JSON.stringify(catArray));
 	console.log(catArray);
 }
@@ -63,17 +61,23 @@ async function getCat(queryURL) {
 		var catUrl = catPhoto[i].url;
 		console.log(catUrl);
 		var imgEl = document.createElement('div');
+		imgEl.classList = 'card';
 		var catImgEl = document.createElement('img');
+
 		var catFavBtnEl = document.createElement('button');
 		catFavBtnEl.textContent = 'thumb_up';
-		catFavBtnEl.classList = 'material-icons';
+		catFavBtnEl.classList = 'material-icons likeBtn';
+
 		var catUnFavBtnEl = document.createElement('button');
 		catUnFavBtnEl.textContent = 'thumb_down';
-		catUnFavBtnEl.classList = 'material-icons';
+		catUnFavBtnEl.classList = 'material-icons likeBtn';
+
 		catImgEl.src = catUrl;
 		catFavBtnEl.id = catUrl;
+
 		catFavBtnEl.addEventListener('click', isFavorited);
 		catUnFavBtnEl.addEventListener('click', isUnFavorited);
+
 		imgEl.appendChild(catImgEl);
 		imgEl.appendChild(catFavBtnEl);
 		imgEl.appendChild(catUnFavBtnEl);
