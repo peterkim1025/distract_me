@@ -8,13 +8,19 @@ var catNum = 1;
 var catBreed = 'Abyssinian'; //breed.name
 var formdata = new FormData();
 
+if (localStorage.getItem('favoriteCats') == null) {
+	var catArray = [];
+} else {
+	var catArray = JSON.parse(localStorage.getItem('favoriteCats'));
+}
+
 var requestOptions = {
 	method: 'GET',
 	redirect: 'follow',
 };
 
-if (catNum != undefined) {
-}
+// if (catNum != undefined) {
+// }
 
 var buttonClickHandler = function (event) {
 	catNum = catNumEl.value;
@@ -29,8 +35,17 @@ var buttonClickHandler = function (event) {
 
 function isFavorited(event) {
 	img = event.target.id;
-	rgx = /images\/(.*).[a-z]{3}/;
-	img = img.match(rgx)[1];
+	catArray.push(img);
+	// rgx = /images\/(.*).[a-z]{3}/;
+	// img = img.match(rgx)[1];
+	localStorage.setItem('favoriteCats', JSON.stringify(catArray));
+	console.log(catArray);
+}
+
+function isUnFavorited(event) {
+	img = event.target.id;
+	// rgx = /images\/(.*).[a-z]{3}/;
+	// img = img.match(rgx)[1];
 	console.log(img);
 }
 
@@ -50,13 +65,18 @@ async function getCat(queryURL) {
 		var imgEl = document.createElement('div');
 		var catImgEl = document.createElement('img');
 		var catFavBtnEl = document.createElement('button');
-		catFavBtnEl.textContent = 'favorite';
+		catFavBtnEl.textContent = 'thumb_up';
 		catFavBtnEl.classList = 'material-icons';
+		var catUnFavBtnEl = document.createElement('button');
+		catUnFavBtnEl.textContent = 'thumb_down';
+		catUnFavBtnEl.classList = 'material-icons';
 		catImgEl.src = catUrl;
 		catFavBtnEl.id = catUrl;
 		catFavBtnEl.addEventListener('click', isFavorited);
+		catUnFavBtnEl.addEventListener('click', isUnFavorited);
 		imgEl.appendChild(catImgEl);
 		imgEl.appendChild(catFavBtnEl);
+		imgEl.appendChild(catUnFavBtnEl);
 		catPhotoContainerEl.appendChild(imgEl);
 	}
 }
