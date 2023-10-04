@@ -17,3 +17,18 @@ button {
     width: 90%;
     justify-content: center;
 }
+
+#filterList {
+display:flex;
+flex-direction: ;
+justify-content: flex-end;
+
+}
+
+nav {
+    display: flex;
+}
+
+#joke{
+    text-align: center;
+}
