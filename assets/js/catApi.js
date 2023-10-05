@@ -5,6 +5,7 @@ const baseURL = 'https://api.thecatapi.com/v1/images/search?';
 const breedUrl = 'https://api.thecatapi.com/v1/breeds';
 var catSearchBtnEl = document.querySelector('#cat-Search-Btn');
 var randCatBtnEl = document.querySelector('#rando-cat-btn');
+var favCatBtnEl = document.querySelector('#favorite-cats-btn');
 var catNumEl = document.querySelector('#cat-number');
 var formdata = new FormData();
 let storedBreeds = [];
@@ -20,9 +21,8 @@ var requestOptions = {
 	redirect: 'follow',
 };
 
-var buttonClickHandler = function (event) {
+var buttonClickHandler = function () {
 	catNum = catNumEl.value;
-	console.log(catNum);
 	if (catNum > 0) {
 		getMultiCats(catNum);
 	} else {
@@ -43,7 +43,6 @@ function isFavorited(event) {
 		catArray?.push(img);
 		localStorage.setItem('favoriteCats', JSON.stringify(catArray));
 	}
-	console.log(catArray);
 }
 
 function isUnFavorited(event) {
@@ -53,7 +52,6 @@ function isUnFavorited(event) {
 			console.log('not favorited');
 		} else {
 			catArray.indexOf(img);
-			console.log(catArray.indexOf(img));
 			catArray.splice(catArray.indexOf(img), 1);
 			localStorage.setItem('favoriteCats', JSON.stringify(catArray));
 		}
@@ -68,6 +66,22 @@ function getMultiCats(catNum) {
 function getRandomCat() {
 	catPhotoContainerEl.replaceChildren();
 	getMultiCats(1);
+}
+
+function getFavoriteCats() {
+	window.addEventListener('favoriteCats', () => {});
+	var favCatArray = JSON.parse(localStorage.getItem('favoriteCats'));
+	if (favCatArray == null) {
+		console.log('here');
+		var msg = document.createElement('div');
+		msg.innerHTML = 'You must like dogs, you have no favorite cats.';
+		catPhotoContainerEl.appendChild(msg);
+	} else {
+		catPhotoContainerEl.replaceChildren();
+		for (i = 0; i < favCatArray.length; i++) {
+			buildCatElements(favCatArray[i]);
+		}
+	}
 }
 
 async function buildCat(queryURL) {
@@ -111,6 +125,7 @@ getRandomCat();
 
 catSearchBtnEl.addEventListener('click', buttonClickHandler);
 randCatBtnEl.addEventListener('click', getRandomCat);
+favCatBtnEl.addEventListener('click', getFavoriteCats);
 
 fetch(breedUrl, {
 	headers: {
@@ -132,7 +147,7 @@ fetch(breedUrl, {
 			breedDropdown.value = i;
 			breedDropdown.innerHTML = `${breed.name}`;
 			document
-				.getElementById('breed_selector')
+				.getElementById('breed-selector')
 				.appendChild(breedDropdown);
 		}
 	})

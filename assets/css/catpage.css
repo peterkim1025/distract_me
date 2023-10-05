@@ -1,7 +1,10 @@
 :root {
     --white: #fff;
-    --blue: #096abe;
-    --teal: #77bbb5;
+    --blue: #46B1C9;
+    --teal: #84C0C6;
+    --grey:#9FB7B9;
+    --ash-grey: #BCC1BA;
+    --pink: #CC444B;
     font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 }
 
@@ -53,8 +56,12 @@ img {
     border-radius: .3rem;
     margin: .1rem;
     width: max-content;
+    color: var(--pink);
+    background: none;
+    
 }
 
 .likeBtn:hover {
-    background: var(--teal);
+    background: var(--grey);
+    color: var(--white);
 }
