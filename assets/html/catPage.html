@@ -9,16 +9,41 @@
 			href="https://fonts.googleapis.com/icon?family=Material+Icons"
 			rel="stylesheet"
 		/>
-		<link rel="stylesheet" href="../css/styles.css" />
+		<link rel="stylesheet" href="../css/catpage.css" />
 	</head>
 	<body>
-		<header>Meow</header>
-		<div class="right col-12 col-md-9 p-3 text-light">
-			<h3>here kitty kitty</h3>
-			<label>Cat number <input type="string" id="cat-number" /> </label>
-			<button type="submit" id="cat-Search-Btn">Submit</button>
-			<div id="catPhotoContainer"></div>
+		<div class="right col-12 col-md-9 p-3">
+			<div class="multiCatFetch">
+				<div class="input-field col s6">
+					<input
+					type="text"
+					id="cat-number"
+					placeholder="Enter number of cats"
+					class="materialize-textarea"
+					></input>
+					<label for="cat-number">Want to see more than 1 cat? </label>
+				</div>
+					<button type="submit" id="cat-Search-Btn">
+					Meowfest</button>
+			</div>
+			<label>Specific Breed</label>
+			<div class="input-field col s12 m6">
+				<select
+				onchange="showBreedImage(value)"
+				name="breed_selector"
+				id="breed-selector"
+				class="browser-default"
+				></select>
+			</div>
+			<button type="submit" id="rando-cat-btn">
+				Fetch me a New Kitty
+			</button>
+			<div id="catPhotoContainer" class="col s12 m6"></div>
+				<button id="favorite-cats-btn">Get All Favorites
+				</button>
 		</div>
-		<script src="../js/catApi.js"></script>
+    </div>  
+  	<script type="text/javascript" src="../js/materialize.min.js"></script>
+	<script src="../js/catApi.js"></script>
 	</body>
 </html>
