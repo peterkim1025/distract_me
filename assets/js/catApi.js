@@ -2,12 +2,10 @@ const apiKey =
 	'live_ZiflOEh1DE6p2oLlab6srhvyY5IZfJgsu3WgB31hRYueUsTkAGbSuLk3uB2LjnWH';
 const catPhotoContainerEl = document.querySelector('#catPhotoContainer');
 const baseURL = 'https://api.thecatapi.com/v1/images/search?';
-const breedUrl = `https://api.thecatapi.com/v1/breeds`;
+const breedUrl = 'https://api.thecatapi.com/v1/breeds';
 var catSearchBtnEl = document.querySelector('#cat-Search-Btn');
 var randCatBtnEl = document.querySelector('#rando-cat-btn');
 var catNumEl = document.querySelector('#cat-number');
-// var catNum = 1;
-var catBreed = 'Abyssinian'; //breed.name
 var formdata = new FormData();
 let storedBreeds = [];
 
@@ -26,7 +24,6 @@ var buttonClickHandler = function (event) {
 	catNum = catNumEl.value;
 	console.log(catNum);
 	if (catNum > 0) {
-		catPhotoContainerEl.replaceChildren();
 		getMultiCats(catNum);
 	} else {
 		alert('Please enter a number greater than 0');
@@ -77,33 +74,39 @@ async function buildCat(queryURL) {
 	const catPhoto = await fetch(queryURL, requestOptions)
 		.then((response) => response.json())
 		.catch((error) => console.log('error', error));
+	catPhotoContainerEl.replaceChildren();
 	for (i = 0; i < catPhoto.length; i++) {
-		var catUrl = catPhoto[i].url;
-		var imgEl = document.createElement('div');
-		imgEl.classList = 'card';
-		var catImgEl = document.createElement('img');
-
-		var catFavBtnEl = document.createElement('button');
-		catFavBtnEl.textContent = 'thumb_up';
-		catFavBtnEl.classList = 'material-icons likeBtn';
-
-		var catUnFavBtnEl = document.createElement('button');
-		catUnFavBtnEl.textContent = 'thumb_down';
-		catUnFavBtnEl.classList = 'material-icons likeBtn';
-
-		catImgEl.src = catUrl;
-		catFavBtnEl.id = catUrl;
-		catUnFavBtnEl.id = catUrl;
-
-		catFavBtnEl.addEventListener('click', isFavorited);
-		catUnFavBtnEl.addEventListener('click', isUnFavorited);
-
-		imgEl.appendChild(catImgEl);
-		imgEl.appendChild(catFavBtnEl);
-		imgEl.appendChild(catUnFavBtnEl);
-		catPhotoContainerEl.appendChild(imgEl);
+		buildCatElements(catPhoto[i].url);
 	}
 }
+
+function buildCatElements(url) {
+	var catUrl = url;
+	var imgEl = document.createElement('div');
+	imgEl.classList = 'card';
+	var catImgEl = document.createElement('img');
+
+	var favBtnEl = document.createElement('button');
+	favBtnEl.textContent = 'thumb_up';
+	favBtnEl.classList = 'material-icons likeBtn';
+
+	var unfavBtnEl = document.createElement('button');
+	unfavBtnEl.textContent = 'thumb_down';
+	unfavBtnEl.classList = 'material-icons likeBtn';
+
+	catImgEl.src = catUrl;
+	favBtnEl.id = catUrl;
+	unfavBtnEl.id = catUrl;
+
+	favBtnEl.addEventListener('click', isFavorited);
+	unfavBtnEl.addEventListener('click', isUnFavorited);
+
+	imgEl.appendChild(catImgEl);
+	imgEl.appendChild(favBtnEl);
+	imgEl.appendChild(unfavBtnEl);
+	catPhotoContainerEl.appendChild(imgEl);
+}
+
 getRandomCat();
 
 catSearchBtnEl.addEventListener('click', buttonClickHandler);
@@ -139,5 +142,5 @@ fetch(breedUrl, {
 
 function showBreedImage(index) {
 	catPhotoContainerEl.replaceChildren();
-	document.getElementById('breed_image').src = storedBreeds[index].image.url;
+	buildCatElements(storedBreeds[index].image.url);
 }

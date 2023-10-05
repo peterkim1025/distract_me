@@ -24,13 +24,15 @@
 				</label>
 				<button type="submit" id="cat-Search-Btn">Meowfest</button>
 			</div>
-			<select onchange="showBreedImage(value)" name="breed_selector" id="breed_selector"></select>
-			<button type="submit" id="rando-cat-btn">Fetch me a New Kitty</button>
+			<select
+				onchange="showBreedImage(value)"
+				name="breed_selector"
+				id="breed_selector"
+			></select>
+			<button type="submit" id="rando-cat-btn">
+				Fetch me a New Kitty
+			</button>
 			<div id="catPhotoContainer"></div>
-		</div>
-		<div>
-			<div id="breed_json"></div>
-			<img id="breed_image"></img>
 		</div>
 		<script src="../js/catApi.js"></script>
 	</body>
