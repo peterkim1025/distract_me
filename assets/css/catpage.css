@@ -57,8 +57,7 @@ img {
     margin: .1rem;
     width: max-content;
     color: var(--pink);
-    background: none;
-    
+    background: none;   
 }
 
 .likeBtn:hover {

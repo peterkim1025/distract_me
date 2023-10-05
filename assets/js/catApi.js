@@ -96,9 +96,12 @@ async function buildCat(queryURL) {
 
 function buildCatElements(url) {
 	var catUrl = url;
-	var imgEl = document.createElement('div');
-	imgEl.classList = 'card';
+	var cardContentEl = document.createElement('div');
+	cardContentEl.classList = 'card-content';
 	var catImgEl = document.createElement('img');
+
+	var cardActionsEl = document.createElement('div');
+	cardActionsEl.classList = 'card-action';
 
 	var favBtnEl = document.createElement('button');
 	favBtnEl.textContent = 'thumb_up';
@@ -115,10 +118,11 @@ function buildCatElements(url) {
 	favBtnEl.addEventListener('click', isFavorited);
 	unfavBtnEl.addEventListener('click', isUnFavorited);
 
-	imgEl.appendChild(catImgEl);
-	imgEl.appendChild(favBtnEl);
-	imgEl.appendChild(unfavBtnEl);
-	catPhotoContainerEl.appendChild(imgEl);
+	cardContentEl.appendChild(catImgEl);
+	cardActionsEl.appendChild(favBtnEl);
+	cardActionsEl.appendChild(unfavBtnEl);
+	catPhotoContainerEl.appendChild(cardContentEl);
+	catPhotoContainerEl.appendChild(cardActionsEl);
 }
 
 getRandomCat();
