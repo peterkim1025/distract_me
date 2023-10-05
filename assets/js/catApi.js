@@ -54,6 +54,7 @@ function isUnFavorited(event) {
 			catArray.indexOf(img);
 			catArray.splice(catArray.indexOf(img), 1);
 			localStorage.setItem('favoriteCats', JSON.stringify(catArray));
+			window.dispatchEvent(new Event('storage'));
 		}
 	}
 }
@@ -69,7 +70,6 @@ function getRandomCat() {
 }
 
 function getFavoriteCats() {
-	window.addEventListener('favoriteCats', () => {});
 	var favCatArray = JSON.parse(localStorage.getItem('favoriteCats'));
 	if (favCatArray == null) {
 		console.log('here');
@@ -126,6 +126,9 @@ getRandomCat();
 catSearchBtnEl.addEventListener('click', buttonClickHandler);
 randCatBtnEl.addEventListener('click', getRandomCat);
 favCatBtnEl.addEventListener('click', getFavoriteCats);
+window.addEventListener('storage', () => {
+	getFavoriteCats();
+});
 
 fetch(breedUrl, {
 	headers: {
