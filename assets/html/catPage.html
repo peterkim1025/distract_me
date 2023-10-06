@@ -9,10 +9,28 @@
 			href="https://fonts.googleapis.com/icon?family=Material+Icons"
 			rel="stylesheet"
 		/>
-		<link rel="stylesheet" href="../css/catpage.css" />
+		 <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+		 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+		<link rel="stylesheet" href="../css/catpage.css"/>
 	</head>
 	<body>
-		<div class="right col-12 col-md-9 p-3">
+		<header class="header">
+			<nav class="nav-wrapper">
+				<a><h1>Distract Me</h1></a>
+			<ul>
+				<li>
+					<button href="./jokePage.html"  aria-label="joke page"><i class="material-icons">tag_faces</i></button>
+				</li>
+				<li>
+					<button href="./catPage.html"  aria-label="joke page"> <i class="material-icons">pets</i></button>
+				</li>
+				<li>
+					<button href="./favorites.html"  aria-label="joke page"> <i class="material-icons">favorite</i></button>
+				</li>
+			</ul>	
+			</nav>
+		</header>
+		<div class="parent">
 			<div class="multiCatFetch">
 				<div class="input-field col s6">
 					<input
@@ -23,26 +41,33 @@
 					></input>
 					<label for="cat-number">Want to see more than 1 cat? </label>
 				</div>
-					<button type="submit" id="cat-Search-Btn">
-					Meowfest</button>
+					<button type="submit" id="cat-Search-Btn">More Kitty
+					</button>
 			</div>
-			<label>Specific Breed</label>
-			<div class="input-field col s12 m6">
-				<select
-				onchange="showBreedImage(value)"
-				name="breed_selector"
-				id="breed-selector"
-				class="browser-default"
-				></select>
+			<div class="catBreed">
+				<label>Specific Breed</label>
+				<div class="input-field col s12 m6">
+					<select
+					onchange="showBreedImage(value)"
+					name="breed_selector"
+					id="breed-selector"
+					class="browser-default"
+					></select>
+				</div>
 			</div>
-			<button type="submit" id="rando-cat-btn">
-				Fetch me a New Kitty
-			</button>
-			<div id="catPhotoContainer" class="col s12 m6"></div>
-				<button id="favorite-cats-btn">Get All Favorites
+			<div class="random">
+				<button type="submit" id="rando-cat-btn" >
+					Random Kitty
 				</button>
-		</div>
-    </div>  
+			</div>
+			<div class="favorites">
+				<button id="favorite-cats-btn" >Favorite Kitty
+				</button>
+			</div>
+			<div id="catPhotoContainer" class="catPhotoContainer"></div>
+    	</div> 
+		<div>
+		</div> 
   	<script type="text/javascript" src="../js/materialize.min.js"></script>
 	<script src="../js/catApi.js"></script>
 	</body>

@@ -26,15 +26,20 @@ var buttonClickHandler = function () {
 	if (catNum > 0) {
 		getMultiCats(catNum);
 	} else {
-		alert('Please enter a number greater than 0');
+		var msg = document.createElement('span');
+		msg.innerHTML = 'Please enter a number greater than 0';
+		catPhotoContainerEl.appendChild(msg);
 	}
 };
 
-function isFavorited(event) {
+function isFavorite(event) {
 	img = event.target.id;
 	if (catArray != null) {
 		if (catArray?.includes(img)) {
 			console.log(' cat is already favorited');
+			var msg = document.createElement('span');
+			msg.innerHTML = 'cat is already favorited';
+			catPhotoContainerEl.appendChild(msg);
 		} else {
 			catArray?.push(img);
 			localStorage.setItem('favoriteCats', JSON.stringify(catArray));
@@ -96,8 +101,10 @@ async function buildCat(queryURL) {
 
 function buildCatElements(url) {
 	var catUrl = url;
+	var indivCatEl = document.createElement('div');
+	indivCatEl.classList = 'card';
 	var cardContentEl = document.createElement('div');
-	cardContentEl.classList = 'card-content';
+	cardContentEl.classList = 'card-image';
 	var catImgEl = document.createElement('img');
 
 	var cardActionsEl = document.createElement('div');
@@ -115,14 +122,15 @@ function buildCatElements(url) {
 	favBtnEl.id = catUrl;
 	unfavBtnEl.id = catUrl;
 
-	favBtnEl.addEventListener('click', isFavorited);
+	favBtnEl.addEventListener('click', isFavorite);
 	unfavBtnEl.addEventListener('click', isUnFavorited);
 
 	cardContentEl.appendChild(catImgEl);
 	cardActionsEl.appendChild(favBtnEl);
 	cardActionsEl.appendChild(unfavBtnEl);
-	catPhotoContainerEl.appendChild(cardContentEl);
-	catPhotoContainerEl.appendChild(cardActionsEl);
+	indivCatEl.appendChild(cardContentEl);
+	indivCatEl.appendChild(cardActionsEl);
+	catPhotoContainerEl.appendChild(indivCatEl);
 }
 
 getRandomCat();
