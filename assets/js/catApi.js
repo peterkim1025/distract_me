@@ -36,9 +36,9 @@ function isFavorite(event) {
 	img = event.target.id;
 	if (catArray != null) {
 		if (catArray?.includes(img)) {
-			console.log(' cat is already favorited');
+			console.log('This cat is already favorited');
 			var msg = document.createElement('span');
-			msg.innerHTML = 'cat is already favorited';
+			msg.innerHTML = 'This meowster has been already favorited';
 			catPhotoContainerEl.appendChild(msg);
 		} else {
 			catArray?.push(img);

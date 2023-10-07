@@ -30,21 +30,21 @@
 			</ul>	
 			</nav>
 		</header>
-		<div class="parent">
-			<div class="multiCatFetch">
-				<div class="input-field col s12">
+		<div class="parent row">
+			<div class="multiCatFetch col s12 m4 l4">
+				<div class="input-field col s6">
 					<input
 					type="text"
 					id="cat-number"
 					class="materialize-textarea"
 					></input>
-					<label for="cat-number" class="cat-number">See more cats?</label>
-					<span class="helper-text">Enter how many</span>
-				</div>
-					<button type="submit" id="cat-Search-Btn">More Kitty
+					<label for="cat-number" class="cat-number">See more kitties?</label>
+					<span class="helper-text">Enter a number</span>
+					<button type="submit" id="cat-Search-Btn">Meow
 					</button>
+				</div>
 			</div>
-			<div class="catBreed">
+			<div class="catBreed col s12 m4 l4">
 				<label>Select a Specific Breed</label>
 					<select
 					onchange="showBreedImage(value)"
@@ -53,18 +53,16 @@
 					class="browser-default"
 					></select>
 			</div>
-			<div class="random">
+			<div class="cat-btns col s12 m4 l4">
 				<button type="submit" id="rando-cat-btn" >
-					Random Kitty
+				Generate Random Kitty
+				</button>
+				<button type="submit" id="favorite-cats-btn" >Show Favorite Kitties
 				</button>
 			</div>
-			<div class="favorites">
-				<button id="favorite-cats-btn" >Favorite Kitty
-				</button>
-			</div>
-			<div id="catPhotoContainer" class="catPhotoContainer s2 m6 l3"></div>
     	</div> 
-		<div>
+		<div class="section row col s12">
+			<div id="catPhotoContainer" class="catPhotoContainer"></div>
 		</div> 
   	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 	<script type="text/javascript" src="../js/materialize.min.js"></script>
