@@ -38,7 +38,7 @@ function isFavorite(event) {
 		if (catArray?.includes(img)) {
 			console.log('This cat is already favorited');
 			var msg = document.createElement('span');
-			msg.innerHTML = 'This meowster has been already favorited';
+			msg.innerHTML = 'This meowster has been already favorited!';
 			catPhotoContainerEl.appendChild(msg);
 		} else {
 			catArray?.push(img);
@@ -50,7 +50,7 @@ function isFavorite(event) {
 	}
 }
 
-function isUnFavorited(event) {
+function isUnFavorite(event) {
 	img = event.target.id;
 	if (catArray != null) {
 		if (!catArray.includes(img)) {
@@ -123,7 +123,7 @@ function buildCatElements(url) {
 	unfavBtnEl.id = catUrl;
 
 	favBtnEl.addEventListener('click', isFavorite);
-	unfavBtnEl.addEventListener('click', isUnFavorited);
+	unfavBtnEl.addEventListener('click', isUnFavorite);
 
 	cardContentEl.appendChild(catImgEl);
 	cardActionsEl.appendChild(favBtnEl);

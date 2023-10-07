@@ -109,7 +109,6 @@ button:hover {
     flex-direction: row;
 }
 .likeBtn {
-    border-radius: .3rem;
     margin: .1rem;
     width: max-content;
     color: var(--pink);
