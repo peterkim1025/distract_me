@@ -26,15 +26,20 @@ var buttonClickHandler = function () {
 	if (catNum > 0) {
 		getMultiCats(catNum);
 	} else {
-		alert('Please enter a number greater than 0');
+		var msg = document.createElement('span');
+		msg.innerHTML = 'Please enter a number greater than 0';
+		catPhotoContainerEl.appendChild(msg);
 	}
 };
 
-function isFavorited(event) {
+function isFavorite(event) {
 	img = event.target.id;
 	if (catArray != null) {
 		if (catArray?.includes(img)) {
-			console.log(' cat is already favorited');
+			console.log('This cat is already favorited');
+			var msg = document.createElement('span');
+			msg.innerHTML = 'This meowster has been already favorited!';
+			catPhotoContainerEl.appendChild(msg);
 		} else {
 			catArray?.push(img);
 			localStorage.setItem('favoriteCats', JSON.stringify(catArray));
@@ -45,7 +50,7 @@ function isFavorited(event) {
 	}
 }
 
-function isUnFavorited(event) {
+function isUnFavorite(event) {
 	img = event.target.id;
 	if (catArray != null) {
 		if (!catArray.includes(img)) {
@@ -96,12 +101,14 @@ async function buildCat(queryURL) {
 
 function buildCatElements(url) {
 	var catUrl = url;
+	var indivCatEl = document.createElement('div');
+	indivCatEl.classList = 'card';
 	var cardContentEl = document.createElement('div');
-	cardContentEl.classList = 'card-content';
+	cardContentEl.classList = 'card-image';
 	var catImgEl = document.createElement('img');
 
 	var cardActionsEl = document.createElement('div');
-	cardActionsEl.classList = 'card-action';
+	cardActionsEl.classList = 'card-action card-btn';
 
 	var favBtnEl = document.createElement('button');
 	favBtnEl.textContent = 'thumb_up';
@@ -115,14 +122,15 @@ function buildCatElements(url) {
 	favBtnEl.id = catUrl;
 	unfavBtnEl.id = catUrl;
 
-	favBtnEl.addEventListener('click', isFavorited);
-	unfavBtnEl.addEventListener('click', isUnFavorited);
+	favBtnEl.addEventListener('click', isFavorite);
+	unfavBtnEl.addEventListener('click', isUnFavorite);
 
 	cardContentEl.appendChild(catImgEl);
 	cardActionsEl.appendChild(favBtnEl);
 	cardActionsEl.appendChild(unfavBtnEl);
-	catPhotoContainerEl.appendChild(cardContentEl);
-	catPhotoContainerEl.appendChild(cardActionsEl);
+	indivCatEl.appendChild(cardContentEl);
+	indivCatEl.appendChild(cardActionsEl);
+	catPhotoContainerEl.appendChild(indivCatEl);
 }
 
 getRandomCat();
@@ -146,6 +154,9 @@ fetch(breedUrl, {
 		data = data.filter((img) => img.image?.url != null);
 		storedBreeds = data;
 
+		// $(document).ready(function () {
+		// 	$('select').formSelect();
+		// });
 		for (let i = 0; i < storedBreeds.length; i++) {
 			const breed = storedBreeds[i];
 			let breedDropdown = document.createElement('option');
@@ -154,7 +165,7 @@ fetch(breedUrl, {
 			breedDropdown.value = i;
 			breedDropdown.innerHTML = `${breed.name}`;
 			document
-				.getElementById('breed-selector')
+				.getElementById('breed_selector')
 				.appendChild(breedDropdown);
 		}
 	})
