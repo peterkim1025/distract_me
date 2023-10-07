@@ -15,6 +15,7 @@ header{
     justify-content: center;
     font-size: 2.2rem;
     background-color: var(--white);
+    margin-bottom: 2rem;
 }
 
 h1{
@@ -41,9 +42,20 @@ nav{
 
 .multiCatFetch {
     grid-area: 1 / 1 / 2 / 2;
+    width: 45%;
 }
+.cat-number {
+    left:0rem;
+}
+
 .catBreed{
     grid-area: 1 / 2 / 2 / 3;
+    width: max-content;
+}
+select {
+    background-color: #b2dbdf75;
+    color: var(--blue);
+    border-radius: 0.3rem;
 }
 .random {
     grid-area: 1 / 3 / 3 / 4;
@@ -51,38 +63,43 @@ nav{
 .favorites{
     grid-area: 1 / 4 / 4 / 5;
 }
-
 .catPhotoContainer{
-grid-area: 2 / 1 / 1 / 2;
+    grid-area: 2;
 }
-
-button {
+.card {
+    width: 20rem;
+    height: 95%;
+}
+.nav-btn{
     background: none;
+}
+button {
+    background: var(--blue);
     border: none;
-    color: var(--blue);
+    color: var(--white);
     border-radius: .3rem;
 }
 button:hover {
-    color: var(--pink);
+    background: var(--teal);
 }
-
 .placeholder { 
     display: flex;
     flex-wrap: wrap;
     width: 90%;
     justify-content: center;
 }
-
 #catPhotoContainer {
     display: flex;
     flex-direction: column;
     align-items: center;
-    grid-area: 3 / 1 / 6 / 6;
 }
-
-.card {
+.card-btn {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+    flex-direction: row;
 }
-
 .likeBtn {
     border-radius: .3rem;
     margin: .1rem;
@@ -90,7 +107,6 @@ button:hover {
     color: var(--pink);
     background: none;   
 }
-
 .likeBtn:hover {
     background: var(--grey);
     color: var(--white);

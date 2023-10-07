@@ -108,7 +108,7 @@ function buildCatElements(url) {
 	var catImgEl = document.createElement('img');
 
 	var cardActionsEl = document.createElement('div');
-	cardActionsEl.classList = 'card-action';
+	cardActionsEl.classList = 'card-action card-btn';
 
 	var favBtnEl = document.createElement('button');
 	favBtnEl.textContent = 'thumb_up';
@@ -154,6 +154,9 @@ fetch(breedUrl, {
 		data = data.filter((img) => img.image?.url != null);
 		storedBreeds = data;
 
+		// $(document).ready(function () {
+		// 	$('select').formSelect();
+		// });
 		for (let i = 0; i < storedBreeds.length; i++) {
 			const breed = storedBreeds[i];
 			let breedDropdown = document.createElement('option');
@@ -162,7 +165,7 @@ fetch(breedUrl, {
 			breedDropdown.value = i;
 			breedDropdown.innerHTML = `${breed.name}`;
 			document
-				.getElementById('breed-selector')
+				.getElementById('breed_selector')
 				.appendChild(breedDropdown);
 		}
 	})
