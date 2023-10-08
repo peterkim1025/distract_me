@@ -21,10 +21,6 @@ button {
     justify-content: center;
 }
 
-body {
-    background-color: antiquewhite;
-}
-
 #filterList {
     display: flex;
     padding: 10px;
