@@ -63,14 +63,10 @@ select {
     width: max-content;
 }
 .cat-btns {
-    /* grid-area: 1 / 3 / 3 / 4; */
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-evenly;
-}
-.catPhotoContainer{
-    /* grid-area: 2; */
 }
 .card {
     width: 20rem;
@@ -111,13 +107,13 @@ button:hover {
     align-items: center;
     flex-direction: row;
 }
-.likeBtn {
+.like-btn {
     margin: .1rem;
     width: max-content;
     color: var(--pink);
     background: none;   
 }
-.likeBtn:hover {
+.like-btn:hover {
     background: var(--grey);
     color: var(--white);
 }

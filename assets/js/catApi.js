@@ -112,11 +112,11 @@ function buildCatElements(url) {
 
 	var favBtnEl = document.createElement('button');
 	favBtnEl.textContent = 'thumb_up';
-	favBtnEl.classList = 'material-icons likeBtn';
+	favBtnEl.classList = 'material-icons like-btn';
 
 	var unfavBtnEl = document.createElement('button');
 	unfavBtnEl.textContent = 'thumb_down';
-	unfavBtnEl.classList = 'material-icons likeBtn';
+	unfavBtnEl.classList = 'material-icons like-btn';
 
 	catImgEl.src = catUrl;
 	favBtnEl.id = catUrl;

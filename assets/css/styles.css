@@ -23,14 +23,16 @@ h1 {
     font-size: 2.2rem;
     color: var(--blue);
 }
-
+h2 {
+    padding-left: 3rem;
+    font-size: 2rem;
+}
 nav {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     background-color: var(--teal);
     align-items: center;
-
 }
 .nav-btn {
     background: none;
@@ -42,4 +44,28 @@ like buttons
 card layout */
 .favorite-column{
 background: var(--tealOpaque);
+}
+button {
+    background: var(--blue);
+    border: none;
+    color: var(--white);
+    border-radius: .3rem;
+    margin: .3rem;
+    height: 3rem;
+}
+
+button:hover {
+    background: var(--teal);
+}
+
+.like-btn {
+    margin: .1rem;
+    width: max-content;
+    color: var(--pink);
+    background: none;
+}
+
+.like-btn:hover {
+    background: var(--grey);
+    color: var(--white);
 }
