@@ -20,7 +20,7 @@
 		/>
 		<link rel="stylesheet" href="../css/styles.css" />
 	</head>
-	<body>
+	<body onload="getFavoriteCats()">
 		<header class="header">
 			<nav class="nav-wrapper">
 				<h1>Distract Me</h1>
@@ -65,10 +65,14 @@
 			</div>
 			<div class="favorite-column col s6">
 				<h3><i class="material-icons">pets</i> Cats</h3>
-				<div class="fav-cats">cats</div>
+				<div class="section row col s12">
+					<div id="catPhotoContainer" class="catPhotoContainer"></div>
+				</div>
 			</div>
 		</div>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 		<script type="text/javascript" src="../js/materialize.min.js"></script>
+		<script src="../js/script.js"></script>
+		<!-- <script src="../js/catApi.js"></script> -->
 	</body>
 </html>

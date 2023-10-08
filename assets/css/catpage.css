@@ -102,16 +102,21 @@ button:hover {
 }
 .card-btn {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     flex-wrap: wrap;
     align-items: center;
     flex-direction: row;
+    
 }
 .like-btn {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
     margin: .1rem;
     width: max-content;
     color: var(--pink);
-    background: none;   
+    background: none;
 }
 .like-btn:hover {
     background: var(--grey);

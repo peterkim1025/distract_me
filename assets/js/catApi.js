@@ -135,9 +135,9 @@ function buildCatElements(url) {
 
 getRandomCat();
 
-catSearchBtnEl.addEventListener('click', buttonClickHandler);
-randCatBtnEl.addEventListener('click', getRandomCat);
-favCatBtnEl.addEventListener('click', getFavoriteCats);
+catSearchBtnEl?.addEventListener('click', buttonClickHandler);
+randCatBtnEl?.addEventListener('click', getRandomCat);
+favCatBtnEl?.addEventListener('click', getFavoriteCats);
 window.addEventListener('storage', () => {
 	getFavoriteCats();
 });
