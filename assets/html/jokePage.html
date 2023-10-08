@@ -5,20 +5,49 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 		<title>Joke texts</title>
-		<!-- Compiled and minified CSS -->
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-		<link rel="stylesheet" href="../css/styles.css" />
+		<link rel="stylesheet" href="../css/jokepage.css" />
 		
 	</head>
 	<body>
 		<header class="header">
-			
-		<nav class="teal lighten-2">
-		<h1>Distract Me</h1>	
-		<a href="favorites.html" class="btn red btn-floating pulse favorite"><i class="material-icons">favorite</i></a>
-		</nav>
-	</header>
+			<nav class="nav-wrapper">
+				<h1>Distract Me</h1>
+				<ul>
+					<li>
+						<button
+							aria-label="joke page"
+							class="nav-btn"
+						>
+							<a href="./jokePage.html"
+								><i class="material-icons">tag_faces</i></a
+							>
+						</button>
+					</li>
+					<li>
+						<button
+							
+							aria-label="cat page"
+							class="nav-btn"
+						><a href="./catPage.html">
+							<i class="material-icons">pets</i>
+							</a>
+						</button>
+					</li>
+					<li>
+						<button
+						aria-label="favorites page"
+						class="nav-btn"
+						>
+						<a href="./favorites.html">
+							<i class="material-icons">favorite</i>
+						</a>
+						</button>
+					</li>
+				</ul>
+			</nav>
+		</header>
 		<div class="container">
 			<div class="card-panel blue lighten-3">
 			<h2>Random Joke Generator</h2>
@@ -42,7 +71,7 @@
 			<div class="align">
 			<button id="btn" >Get Joke</button>
 			<div  class="card-panel grey" id="joke" class="fade" ></div>
-			<div class="favBtn"><button class="btn red btn-floating pulse" ><i class="material-icons">favorite</i></button>
+			<div class="favBtn"><button class="btn"><i class="material-icons">favorite</i></button>
 		</div>
 	</div>
 	</div>

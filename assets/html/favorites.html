@@ -1,14 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  <header>
-    <h1>Favorites</h1>
-    <div class="card-panel grey lighten-5 z-depth-1"></div>
-  </header>
-</body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Favorites</title>
+		<link
+			href="https://fonts.googleapis.com/icon?family=Material+Icons"
+			rel="stylesheet"
+		/>
+		<link
+			type="text/css"
+			rel="stylesheet"
+			href="../css/materialize.min.css"
+			media="screen,projection"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+		/>
+		<link rel="stylesheet" href="../css/styles.css" />
+	</head>
+	<body>
+		<header class="header">
+			<nav class="nav-wrapper">
+				<h1>Distract Me</h1>
+				<ul>
+					<li>
+						<button
+							href="./jokePage.html"
+							aria-label="joke page"
+							class="nav-btn"
+						>
+							<a href="./jokePage.html"
+								><i class="material-icons">tag_faces</i></a
+							>
+						</button>
+					</li>
+					<li>
+						<button aria-label="cat page" class="nav-btn">
+							<a href="./catPage.html">
+								<i class="material-icons">pets</i>
+							</a>
+						</button>
+					</li>
+					<li>
+						<button
+							href="./favorites.html"
+							aria-label="favorites page"
+							class="nav-btn"
+						>
+							<a href="./favorites.html"
+								><i class="material-icons">favorite</i></a
+							>
+						</button>
+					</li>
+				</ul>
+			</nav>
+		</header>
+		<h2>Favorites</h2>
+		<div class="container row">
+			<div class="favorite-column col s6">
+				<h3><i class="material-icons">tag_faces</i> Jokes</h3>
+				<div class="fav-jokes">jokes</div>
+			</div>
+			<div class="favorite-column col s6">
+				<h3><i class="material-icons">pets</i> Cats</h3>
+				<div class="fav-cats">cats</div>
+			</div>
+		</div>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+		<script type="text/javascript" src="../js/materialize.min.js"></script>
+	</body>
 </html>

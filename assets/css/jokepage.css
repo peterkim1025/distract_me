@@ -1,7 +1,10 @@
 :root {
     --white: #fff;
-    --blue: #3d5170;
-    --grey: grey;
+    --blue: #16525f;
+    --teal: #84C0C6;
+    --grey: #9FB7B9;
+    --ash-grey: #BCC1BA;
+    --pink: #CC444B;
     font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 }
 
@@ -18,12 +21,30 @@ button {
     justify-content: center;
 }
 
-#filterList {
-display:flex;
-flex-direction: ;
-justify-content: flex-end;
-
+body {
+    background-color: antiquewhite;
 }
+
+#filterList {
+    display: flex;
+    padding: 10px;
+    justify-content: flex-end;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.align {
+    text-align: center;
+}
+
+.favorite {
+    display: flex;
+    align-items: center;
+} 
 
 nav {
     display: flex;

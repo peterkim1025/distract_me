@@ -1,34 +1,45 @@
 :root {
     --white: #fff;
-    --blue: #3d5170;
-    --grey: grey;
+    --blue: #16525f;
+    --teal: #84C0C6;
+    --tealOpaque: #84c0c687;
+    --grey: #9FB7B9;
+    --ash-grey: #BCC1BA;
+    --pink: #CC444B;
     font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 }
 
-body{
-    background-color: antiquewhite;
+header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.2rem;
+    background-color: var(--white);
+    margin-bottom: 2rem;
 }
 
-#filterList {
-    display:flex;
-    padding: 10px;
+h1 {
+    font-size: 2.2rem;
+    color: var(--blue);
 }
-    
+
 nav {
-    display:flex ;
+    display: flex;
+    flex-direction: row;
     justify-content: space-between;
+    background-color: var(--teal);
     align-items: center;
-}
 
-.align{
-    text-align: center;
 }
-    
-.header{
-    display: flex;
-    justify-content: space-between;
+.nav-btn {
+    background: none;
+    border: none;
 }
-.favorite{
-    display: flex;
-    align-items: center;
+/* navigation header
+navigation links
+like buttons 
+card layout */
+.favorite-column{
+background: var(--tealOpaque);
 }
