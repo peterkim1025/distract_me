@@ -26,8 +26,12 @@ In this project we were able to use our skills learned from our first 6 weeks to
 
 [Used Joke API](https://sv443.net/jokeapi/v2/)
 
-## Assets
+## Links and Mockups
 
 This is the github repo location: [distract_me](https://github.com/peterkim1025/distract_me)
 
 This following is a link to the deployed application:[Deployed Distract Me project](https://peterkim1025.github.io/distract_me/)
+
+![Cat Page](./assets/imgs/catPage.png)
+![Joke Page](./assets/imgs/jokePage.png)
+![Favorite Page](./assets/imgs/favoritePage.png)
