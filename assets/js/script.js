@@ -90,3 +90,26 @@ function isUnFavorite(event) {
 window.addEventListener('storage', () => {
 	getFavoriteCats();
 });
+
+//display favorite jokes
+function displayFavorites() {
+	const favoritesContainer = document.getElementById('favorites');
+
+	let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+
+	favoritesContainer.innerHTML = '';
+
+	if (favorites.length === 0) {
+		favoritesContainer.innerHTML = 'You have no favorite jokes yet.';
+	} else {
+		const favoritesList = document.createElement('ul');
+		favorites.forEach((favorite) => {
+			const listItem = document.createElement('li');
+			listItem.textContent = favorite.joke;
+			favoritesList.appendChild(listItem);
+		});
+		favoritesContainer.appendChild(favoritesList);
+	}
+}
+
+displayFavorites();
