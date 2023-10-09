@@ -50,16 +50,16 @@
 		<div class="container">
 			<div class="row col s12 m4 l4">
 				<ul id="filterList">
-					<li><button data-type="Any">Any</button></li>
+					<li><button id="btn" data-type="Any">Any</button></li>
 					<li><button data-type="Misc">Miscellaneous</button></li>
 					<li>
 						<button data-type="Programming">Programming</button>
 					</li>
 					<li><button data-type="Pun">Pun</button></li>
-					<li><button id="btn">Get Joke</button></li>
 				</ul>
 			</div>
 		</div>
+		
 	</div>
 			<div class="section row col s12">
 				<div class="joke-container">
@@ -83,6 +83,10 @@
 						</div>
 					</div>
 				</div>
+				<h3>Favorites:</h3>
+			<div id="favorites"></div>
+			<button id="clearFavoritesBtn">Clear Favorites</button>
+		</div>
 			</div>
 		<script src="../js/jokeApi.js"></script>
 	</body>
