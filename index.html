@@ -1,54 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Navigation Page</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link rel="stylesheet" href="/assets/css/styles.css">
-    <style>
-        body {
-            background-color: #f3f3f3;
-        }
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Navigation Page</title>
+		<link
+			href="https://fonts.googleapis.com/icon?family=Material+Icons"
+			rel="stylesheet"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+		/>
+		<style>
+			body {
+				background-color: #f3f3f3;
+				padding-top: 50px;
+			}
+			.container {
+				text-align: center;
+				background-color: white;
+				padding: 20px;
+				border-radius: 10px;
+				box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+			}
+			h1 {
+				font-size: 36px;
+				color: #333;
+			}
+			.btn-container {
+				margin-top: 20px;
+			}
+		</style>
+		<link rel="stylesheet" href="./assets/css/styles.css" />
+	</head>
+	<body>
+		<div class="container">
+			<h1>
+				<i class="material-icons">pets</i>
+				<i class="material-icons">tag_faces</i>
+				Welcome to Distract Me
+				<i class="material-icons">tag_faces</i>
+				<i class="material-icons">pets</i>
+			</h1>
+			<p>presented by Jess, Juell, Selostian, and Peter</p>
+			<div class="btn-container">
+				<a
+					href="assets/html/catPage.html"
+					class="waves-effect waves-light btn"
+					>Visit Cat Page</a
+				>
+			</div>
+			<div class="btn-container">
+				<a
+					href="assets/html/jokePage.html"
+					class="waves-effect waves-light btn"
+					>Visit Joke Page</a
+				>
+			</div>
+		</div>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+	</body>
 
-        .container {
-            text-align: center;
-            background-color: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-            margin-top: 50px;
-        }
-
-        h1 {
-            font-size: 36px;
-            color: #333;
-        }
-
-        .btn-container {
-            margin-top: 20px;
-        }
-    </style>
-</head>
-<body>
-    <header class="header">
-			
-		<nav class="teal lighten-2">
-		<h1>Distract Me</h1>	
-		
-		</nav>
-	</header>
-    <div class="container"> 
-        <h1>Welcome to distract_me</h1>
-		<p>presented by Jess, Juell, Selostian, and Peter</p>
-        <div class="btn-container">
-            <a href="assets/html/catPage.html" class="waves-effect waves-light btn">Visit Cat Page</a>
-        </div>
-        <div class="btn-container">
-            <a href="assets/html/jokePage.html" class="waves-effect waves-light btn">Visit Joke Page</a>
-        </div>
-    </div>
-   
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-</body>
 </html>

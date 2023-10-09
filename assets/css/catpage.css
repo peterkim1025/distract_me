@@ -37,7 +37,9 @@ nav{
     flex-wrap: wrap;
     align-items: center;
 }
-
+input{
+    width: 15rem;
+}
 .multiCatFetch {
     width: 45%;
     margin-left: 0rem;
@@ -61,14 +63,10 @@ select {
     width: max-content;
 }
 .cat-btns {
-    /* grid-area: 1 / 3 / 3 / 4; */
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-evenly;
-}
-.catPhotoContainer{
-    /* grid-area: 2; */
 }
 .card {
     width: 20rem;
@@ -83,6 +81,7 @@ button {
     color: var(--white);
     border-radius: .3rem;
     margin: .3rem;
+    height: 3rem;
 }
 button:hover {
     background: var(--teal);
@@ -103,18 +102,23 @@ button:hover {
 }
 .card-btn {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     flex-wrap: wrap;
     align-items: center;
     flex-direction: row;
+    
 }
-.likeBtn {
+.like-btn {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
     margin: .1rem;
     width: max-content;
     color: var(--pink);
-    background: none;   
+    background: none;
 }
-.likeBtn:hover {
+.like-btn:hover {
     background: var(--grey);
     color: var(--white);
 }

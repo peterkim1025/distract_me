@@ -1,33 +1,27 @@
-:root {
-    --white: #fff;
-    --blue: #3d5170;
-    --grey: grey;
-    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-}
-
-button {
-    background: var(--blue);
-    border: none;
-    color: var(--white);
-}
-
-.placeholder { 
-    display: flex;
-    flex-wrap: wrap;
-    width: 90%;
-    justify-content: center;
-}
-
 #filterList {
-display:flex;
-flex-direction: ;
-justify-content: flex-end;
-
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-content: center;
 }
 
 nav {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
+
+.align {
+    text-align: center;
+}
+.favorite-action {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+} 
 
 #joke{
     text-align: center;

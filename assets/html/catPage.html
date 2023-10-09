@@ -11,6 +11,7 @@
 		/>
 		<link type="text/css" rel="stylesheet" href="../css/materialize.min.css"  media="screen,projection"/>
 		 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+		 <link rel="stylesheet" href="../css/styles.css"/>
 		<link rel="stylesheet" href="../css/catpage.css"/>
 	</head>
 	<body>
@@ -19,20 +20,22 @@
 				<a><h1>Distract Me</h1></a>
 			<ul>
 				<li>
-					<button href="./jokePage.html"  aria-label="joke page" class="nav-btn"><i class="material-icons">tag_faces</i></button>
+					<button href="./jokePage.html"  aria-label="joke page" class="nav-btn"><a href="./jokePage.html"><i class="material-icons">tag_faces</i></a></button>
 				</li>
 				<li>
 					<button href="./catPage.html"  aria-label="cat page" class="nav-btn"> <i class="material-icons">pets</i></button>
 				</li>
 				<li>
-					<button href="./favorites.html"  aria-label="favorites page" class="nav-btn"> <i class="material-icons">favorite</i></button>
+					<button href="./favorites.html"  aria-label="favorites page" class="nav-btn"><a href="./favorites.html"><i class="material-icons">favorite</i></a></button>
 				</li>
 			</ul>	
 			</nav>
 		</header>
+		<h2>Here Kitty Kitty</h2>
+		<div class="container">
 		<div class="parent row">
 			<div class="multiCatFetch col s12 m4 l4">
-				<div class="input-field col s6">
+				<div class="input-field">
 					<input
 					type="text"
 					id="cat-number"
@@ -61,12 +64,12 @@
 				</button>
 			</div>
     	</div> 
+		</div>
 		<div class="section row col s12">
 			<div id="catPhotoContainer" class="catPhotoContainer"></div>
 		</div> 
   	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 	<script type="text/javascript" src="../js/materialize.min.js"></script>
-
 	<script src="../js/catApi.js"></script>
 	</body>
 </html>
