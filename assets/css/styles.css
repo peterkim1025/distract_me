@@ -69,3 +69,12 @@ button:hover {
     background: var(--grey);
     color: var(--white);
 }
+
+.favorite-column{
+    margin: 5%;
+}
+
+.border{
+    margin: 75px;
+    border: 1px solid black;
+}

@@ -1,3 +1,4 @@
+//variables
 const apiKey =
 	'live_ZiflOEh1DE6p2oLlab6srhvyY5IZfJgsu3WgB31hRYueUsTkAGbSuLk3uB2LjnWH';
 const catPhotoContainerEl = document.querySelector('#catPhotoContainer');

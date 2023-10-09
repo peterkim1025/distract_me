@@ -102,7 +102,7 @@ function displayFavorites() {
 	if (favorites.length === 0) {
 		favoritesContainer.innerHTML = 'You have no favorite jokes yet.';
 	} else {
-		const favoritesList = document.createElement('ul');
+		const favoritesList = document.createElement('ol');
 		favorites.forEach((favorite) => {
 			const listItem = document.createElement('li');
 			listItem.textContent = favorite.joke;
